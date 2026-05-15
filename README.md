@@ -89,6 +89,6 @@ Todos los cambios de temperatura quedan registrados en temperature_logs y se pue
 
 ---
 
-Licencia
+###Licencia
 Este proyecto está bajo la licencia Apache 2.0. Consulta el archivo LICENSE para más detalles.
 
