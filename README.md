@@ -200,9 +200,9 @@ Multiplicidad: Si tus entidades tienen relaciones (@OneToMany, @ManyToOne), espe
 Justificación Técnica 
 Escribe una breve descripción (máximo 200 palabras) explicando por qué decidiste separar la lógica en esas capas y cómo se refleja el principio de Responsabilidad Única en tu diagrama. 
 R// separe el proyecto en capas porque si metia todo en un solo sitio despues iba a ser un problema mantenerlo, por eso en el diagrama se ve que el controlador solo recibe peticiones, el servicio hace toda la logica de produccion y los repositorios solo hablan con la base de datos. 
---
+
 Por ejemplo TemperatureControlService lo saque aparte porque controlar temperaturas no es lo mismo que gestionar lotes, si mezclaba todo esa clase se volvia gigante y tocar una cosa afectaba la otra.
---
+
 El principio de responsabilidad unica en el diagrama:  
 el controlador cambia si cambia la API, el servicio si cambia la receta o los tiempos de produccion y los repositorios si cambia la base de datos, cada clase tiene un solo trabajo
 
