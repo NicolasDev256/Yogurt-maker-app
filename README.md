@@ -134,8 +134,9 @@ No es suficiente con que aparezcan los endpoints; la documentación debe ser des
 
 <img width="967" height="604" alt="image" src="https://github.com/user-attachments/assets/5566d59f-38b3-44ff-8186-adf823236a6c" />
 
+---
 
-@Schema: Ve a tus clases DTO/Entity y añade descripciones a los atributos (ej. "ID único del usuario", "Correo electrónico en formato válido").
+### @Schema: Ve a tus clases DTO/Entity y añade descripciones a los atributos (ej. "ID único del usuario", "Correo electrónico en formato válido").
 
 <img width="756" height="501" alt="Captura de pantalla 2026-05-15 180330" src="https://github.com/user-attachments/assets/92e416e0-9b45-495e-ab3b-661babbf6b03" />
 
@@ -155,6 +156,139 @@ No es suficiente con que aparezcan los endpoints; la documentación debe ser des
 ---
 
 <img width="597" height="157" alt="image" src="https://github.com/user-attachments/assets/a918a813-f472-45a7-96e7-306d82fbcd17" />
+
+---
+
+## Fase C: Pruebas Funcionales desde Swagger
+Una vez documentada, utiliza la interfaz de Swagger para:
+
+Realizar una petición POST exitosa.
+<img width="1314" height="621" alt="image" src="https://github.com/user-attachments/assets/e3f511cd-dff7-49bc-a1cd-491d9c3f0408" />
+
+---
+
+Realizar una petición GET para verificar que el dato se guardó.
+<img width="1316" height="429" alt="image" src="https://github.com/user-attachments/assets/833e2fc1-7d37-4235-ad6a-e358590a9c5b" />
+
+---
+
+<img width="1311" height="532" alt="image" src="https://github.com/user-attachments/assets/363115fc-2bfd-4f3e-bc8d-52a67e960a34" />
+
+---
+
+## Taller 2
+### Fase B
+Utiliza una herramienta de modelado (Mermaid.js, Lucidchart, Draw.io o StarUML) para crear el diagrama siguiendo estos estándares:
+
+Anotaciones: Representa las anotaciones de Spring (como @Service, @RestController) como stereotypes (ej: «RestController»).
+
+Relaciones: * Usa Inyección de Dependencias (flechas de asociación) para mostrar cómo el Controller usa al Service, y el Service al Repository.
+
+Usa Herencia/Implementación (flechas con punta hueca) para las interfaces de los Repositorios.
+
+Multiplicidad: Si tus entidades tienen relaciones (@OneToMany, @ManyToOne), especifica la cardinalidad (1..*, 0..1).
+
+<img width="2481" height="2560" alt="WhatsApp Image 2026-05-15 at 6 37 50 PM" src="https://github.com/user-attachments/assets/45581961-680a-49b6-ad41-bbc8a9aa9ac5" />
+
+---
+
+### Fase C
+Justificación Técnica 
+Escribe una breve descripción (máximo 200 palabras) explicando por qué decidiste separar la lógica en esas capas y cómo se refleja el principio de Responsabilidad Única en tu diagrama. 
+R// separe el proyecto en capas porque si metia todo en un solo sitio despues iba a ser un problema mantenerlo, por eso en el diagrama se ve que el controlador solo recibe peticiones, el servicio hace toda la logica de produccion y los repositorios solo hablan con la base de datos. 
+Por ejemplo TemperatureControlService lo saque aparte porque controlar temperaturas no es lo mismo que gestionar lotes, si mezclaba todo esa clase se volvia gigante y tocar una cosa afectaba la otra.
+El principio de responsabilidad unica en el diagrama:  
+el controlador cambia si cambia la API, el servicio si cambia la receta o los tiempos de produccion y los repositorios si cambia la base de datos, cada clase tiene un solo trabajo
+
+---
+
+### Archivo Fuente: El archivo editable (ej. .drawio, .md para Mermaid) para verificar la autoría.
+classDiagram
+    class YogurtBatchController <<RestController>> {
+        +startNewBatch()
+        +startHeating()
+        +startInoculating()
+        +startIncubation()
+        +startRefrigeration()
+        +completeBatch()
+        +markAsFailed()
+        +getAllBatches()
+        +getBatch()
+        +recordTemperature()
+    }
+     class YogurtMakingService <<Service>> {
+        +startNewBatch()
+        +startHeating()
+        +startInoculating()
+        +startIncubation()
+        +startRefrigeration()
+        +completeBatch()
+        +markAsFailed()
+        +getBatch()
+        +getAllBatches()
+        +getBatchesByStatus()
+        +recordTemperature()
+    }
+     class TemperatureControlService <<Service>> {
+        +startHeatingProcess()
+        +startIncubationControl()
+        +getCurrentTemperature()
+    }
+    class YogurtBatchRepository <<Repository>>
+    class RecipeRepository <<Repository>>
+    class TemperatureLogRepository <<Repository>>
+    class JpaRepository
+    
+  class Recipe {
+        +id
+        +name
+        +defaultMilkVolume
+        +defaultStarterAmount
+        +heatingTemperature
+        +heatingDuration
+        +inoculationTemperature
+        +incubationTemperature
+        +minIncubationTime
+        +maxIncubationTime
+        +refrigerationTime
+    }
+    class YogurtBatch {
+        +id
+        +batchCode
+        +status
+        +milkVolume
+        +starterAmount
+        +targetTemperature
+        +incubationTime
+        +startTime
+        +incubationStartTime
+        +incubationEndTime
+        +refrigerationStartTime
+        +createdAt
+        +updatedAt
+    }
+    class TemperatureLog {
+        +id
+        +temperature
+        +recordedAt
+        +type
+    }
+    YogurtBatchController --> YogurtMakingService : inyección de dependencia
+    YogurtMakingService --> YogurtBatchRepository : inyección de dependencia
+    YogurtMakingService --> RecipeRepository : inyección de dependencia
+    YogurtMakingService --> TemperatureLogRepository : inyección de dependencia
+    YogurtMakingService --> TemperatureControlService : delega control de temperatura
+    TemperatureControlService --> TemperatureLogRepository : inyección de dependencia
+    TemperatureControlService --> YogurtBatchRepository : persiste cambios de estado
+
+  YogurtBatchRepository ..|> JpaRepository
+    RecipeRepository ..|> JpaRepository
+    TemperatureLogRepository ..|> JpaRepository
+
+   Recipe "1" o-- "0..*" YogurtBatch : recipe
+    YogurtBatch "1" o-- "0..*" TemperatureLog : temperatureLogs
+
+
 
 
 
