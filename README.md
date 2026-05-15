@@ -163,7 +163,11 @@ No es suficiente con que aparezcan los endpoints; la documentación debe ser des
 Una vez documentada, utiliza la interfaz de Swagger para:
 
 Realizar una petición POST exitosa.
-<img width="1314" height="621" alt="image" src="https://github.com/user-attachments/assets/e3f511cd-dff7-49bc-a1cd-491d9c3f0408" />
+<img width="1312" height="495" alt="Captura de pantalla 2026-05-15 184744" src="https://github.com/user-attachments/assets/f3584737-3e02-4fb7-82eb-1331ca4aa096" />
+
+---
+
+<img width="1333" height="370" alt="Captura de pantalla 2026-05-15 184814" src="https://github.com/user-attachments/assets/f1dd3301-c540-4a62-9fd8-ccf752870293" />
 
 ---
 
