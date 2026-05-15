@@ -38,8 +38,7 @@ mvnw.cmd spring-boot:run
 
 # En Linux / Mac:
 ./mvnw spring-boot:run
-
----
+```
 
 ## Accesos importantes
 
