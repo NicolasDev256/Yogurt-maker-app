@@ -220,7 +220,8 @@ classDiagram
         +getBatch()
         +recordTemperature()
     }
-     class YogurtMakingService <<Service>> {
+
+    class YogurtMakingService <<Service>> {
         +startNewBatch()
         +startHeating()
         +startInoculating()
@@ -233,17 +234,19 @@ classDiagram
         +getBatchesByStatus()
         +recordTemperature()
     }
-     class TemperatureControlService <<Service>> {
+
+    class TemperatureControlService <<Service>> {
         +startHeatingProcess()
         +startIncubationControl()
         +getCurrentTemperature()
     }
+
     class YogurtBatchRepository <<Repository>>
     class RecipeRepository <<Repository>>
     class TemperatureLogRepository <<Repository>>
     class JpaRepository
-    
-  class Recipe {
+
+    class Recipe {
         +id
         +name
         +defaultMilkVolume
@@ -277,6 +280,7 @@ classDiagram
         +recordedAt
         +type
     }
+
     YogurtBatchController --> YogurtMakingService : inyección de dependencia
     YogurtMakingService --> YogurtBatchRepository : inyección de dependencia
     YogurtMakingService --> RecipeRepository : inyección de dependencia
@@ -285,11 +289,11 @@ classDiagram
     TemperatureControlService --> TemperatureLogRepository : inyección de dependencia
     TemperatureControlService --> YogurtBatchRepository : persiste cambios de estado
 
-  YogurtBatchRepository ..|> JpaRepository
+    YogurtBatchRepository ..|> JpaRepository
     RecipeRepository ..|> JpaRepository
     TemperatureLogRepository ..|> JpaRepository
 
-   Recipe "1" o-- "0..*" YogurtBatch : recipe
+    Recipe "1" o-- "0..*" YogurtBatch : recipe
     YogurtBatch "1" o-- "0..*" TemperatureLog : temperatureLogs
 
 
