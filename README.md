@@ -128,6 +128,7 @@ No es suficiente con que aparezcan los endpoints; la documentación debe ser des
 <img width="963" height="602" alt="image" src="https://github.com/user-attachments/assets/108a2449-47ff-4e01-bf08-40240e5e811d" />
 ---
 <img width="967" height="604" alt="image" src="https://github.com/user-attachments/assets/5566d59f-38b3-44ff-8186-adf823236a6c" />
+---
 
 @Schema: Ve a tus clases DTO/Entity y añade descripciones a los atributos (ej. "ID único del usuario", "Correo electrónico en formato válido").
 
