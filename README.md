@@ -89,7 +89,7 @@ Documentación completa en Swagger: `http://localhost:8083/swagger-ui.html`
 
 Todos los cambios de temperatura quedan registrados en temperature_logs y se pueden consultar con los endpoints de monitoreo.
 
----
+
 
 ### Licencia
 Este proyecto está bajo la licencia Apache 2.0. Consulta el archivo LICENSE para más detalles.
