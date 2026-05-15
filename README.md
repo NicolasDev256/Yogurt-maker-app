@@ -63,7 +63,7 @@ Documentación completa en Swagger: `http://localhost:8083/swagger-ui.html`
 
 ---
 
-Flujo típico de producción
+## Flujo típico de producción
 
 1.Crear receta (o usar una existente) → POST /api/recipes
 
@@ -89,6 +89,6 @@ Todos los cambios de temperatura quedan registrados en temperature_logs y se pue
 
 ---
 
-###Licencia
+### Licencia
 Este proyecto está bajo la licencia Apache 2.0. Consulta el archivo LICENSE para más detalles.
 
