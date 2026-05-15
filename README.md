@@ -23,6 +23,8 @@ Construido con **Spring Boot 4.0.3** y **Java 25**
 - JDK 25 instalado
 - Git (opcional, para clonar)
 
+---
+
 ### Pasos
 
 ```bash
