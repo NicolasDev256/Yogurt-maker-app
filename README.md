@@ -93,7 +93,8 @@ Todos los cambios de temperatura quedan registrados en temperature_logs y se pue
 ### Licencia
 Este proyecto está bajo la licencia Apache 2.0. Consulta el archivo LICENSE para más detalles.
 
-```
+---
+
 ## Taller 1
 ### Fase A: Configuración de Dependencias
 Añade la biblioteca SpringDoc OpenAPI a tu archivo pom.xml (Maven)
@@ -107,9 +108,9 @@ en: http://localhost:8080/swagger-ui/index.html
 <img width="1342" height="618" alt="image" src="https://github.com/user-attachments/assets/9f21e1c1-1848-4534-94c7-fce1f8d8f964" />
 <img width="1339" height="476" alt="image" src="https://github.com/user-attachments/assets/258e21b1-0960-4213-a965-6c50d5ef134b" />
 <img width="1338" height="328" alt="image" src="https://github.com/user-attachments/assets/96d5e874-39e5-40d7-b85c-14495bb19c26" />
-```
 
-```
+---
+
 ## Fase B: Enriquecimiento de la Documentación (Anotaciones)
 No es suficiente con que aparezcan los endpoints; la documentación debe ser descriptiva. Debes aplicar las siguientes anotaciones en tus Controllers:
 
@@ -127,7 +128,7 @@ No es suficiente con que aparezcan los endpoints; la documentación debe ser des
 <img width="944" height="610" alt="image" src="https://github.com/user-attachments/assets/bd4c489e-dc6b-4c18-9e7a-5acecd8bf8de" />
 <img width="963" height="602" alt="image" src="https://github.com/user-attachments/assets/108a2449-47ff-4e01-bf08-40240e5e811d" />
 <img width="967" height="604" alt="image" src="https://github.com/user-attachments/assets/5566d59f-38b3-44ff-8186-adf823236a6c" />
-```
+
 
 
 
