@@ -38,7 +38,8 @@ mvnw.cmd spring-boot:run
 
 # En Linux / Mac:
 ./mvnw spring-boot:run
-```
+
+---
 
 ## Accesos importantes
 
@@ -87,7 +88,19 @@ Documentación completa en Swagger: `http://localhost:8083/swagger-ui.html`
 8.Completar → POST /api/batches/{id}/complete
 
 Todos los cambios de temperatura quedan registrados en temperature_logs y se pueden consultar con los endpoints de monitoreo.
+```
 
 ### Licencia
 Este proyecto está bajo la licencia Apache 2.0. Consulta el archivo LICENSE para más detalles.
+
+## Taller 1
+### Fase A: Configuración de Dependencias
+Añade la biblioteca SpringDoc OpenAPI a tu archivo pom.xml (Maven)
+• Reto: Identifica la dependencia correcta para Spring Boot 3.x
+(generalmente springdoc-openapi-starter-webmvc-ui)
+<img width="709" height="117" alt="Captura de pantalla 2026-05-15 173714" src="https://github.com/user-attachments/assets/6409fa21-8a61-4cff-9c17-f5d67335a739" />
+
+
+
+
 
