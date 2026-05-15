@@ -27,7 +27,7 @@ Construido con **Spring Boot 4.0.3** y **Java 25**
 
 ### Pasos
 
-```bash
+```
 # Clonar el repositorio
 git clone https://github.com/NicolasDev256/Yogurt-maker-app.git
 cd Yogurt-maker-app
@@ -93,12 +93,46 @@ Todos los cambios de temperatura quedan registrados en temperature_logs y se pue
 ### Licencia
 Este proyecto está bajo la licencia Apache 2.0. Consulta el archivo LICENSE para más detalles.
 
+```
 ## Taller 1
 ### Fase A: Configuración de Dependencias
 Añade la biblioteca SpringDoc OpenAPI a tu archivo pom.xml (Maven)
 • Reto: Identifica la dependencia correcta para Spring Boot 3.x
 (generalmente springdoc-openapi-starter-webmvc-ui)
 <img width="709" height="117" alt="Captura de pantalla 2026-05-15 173714" src="https://github.com/user-attachments/assets/6409fa21-8a61-4cff-9c17-f5d67335a739" />
+
+### Verificación: Tras compilar, comprueba que puedes acceder a la interfaz
+en: http://localhost:8080/swagger-ui/index.html
+<img width="1344" height="626" alt="image" src="https://github.com/user-attachments/assets/5371e91a-0446-4b0d-b721-be4afb6e3d08" />
+<img width="1342" height="618" alt="image" src="https://github.com/user-attachments/assets/9f21e1c1-1848-4534-94c7-fce1f8d8f964" />
+<img width="1339" height="476" alt="image" src="https://github.com/user-attachments/assets/258e21b1-0960-4213-a965-6c50d5ef134b" />
+<img width="1338" height="328" alt="image" src="https://github.com/user-attachments/assets/96d5e874-39e5-40d7-b85c-14495bb19c26" />
+```
+
+```
+## Fase B: Enriquecimiento de la Documentación (Anotaciones)
+No es suficiente con que aparezcan los endpoints; la documentación debe ser descriptiva. Debes aplicar las siguientes anotaciones en tus Controllers:
+
+@Tag: Define un nombre y descripción para cada módulo (ej. "Gestión de Usuarios").
+
+@Operation: Describe qué hace cada método (resumen y descripción detallada).
+
+@ApiResponse: Documenta al menos dos escenarios por endpoint:
+
+200 OK o 201 Created para éxito.
+
+400 Bad Request o 404 Not Found para errores.
+
+@Schema: Ve a tus clases DTO/Entity y añade descripciones a los atributos (ej. "ID único del usuario", "Correo electrónico en formato válido").
+<img width="944" height="610" alt="image" src="https://github.com/user-attachments/assets/bd4c489e-dc6b-4c18-9e7a-5acecd8bf8de" />
+<img width="963" height="602" alt="image" src="https://github.com/user-attachments/assets/108a2449-47ff-4e01-bf08-40240e5e811d" />
+<img width="967" height="604" alt="image" src="https://github.com/user-attachments/assets/5566d59f-38b3-44ff-8186-adf823236a6c" />
+```
+
+
+
+
+
 
 
 
