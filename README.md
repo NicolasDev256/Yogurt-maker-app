@@ -123,11 +123,19 @@ No es suficiente con que aparezcan los endpoints; la documentación debe ser des
 200 OK o 201 Created para éxito.
 
 400 Bad Request o 404 Not Found para errores.
+<img width="944" height="610" alt="image" src="https://github.com/user-attachments/assets/bd4c489e-dc6b-4c18-9e7a-5acecd8bf8de" />
+
+<img width="963" height="602" alt="image" src="https://github.com/user-attachments/assets/108a2449-47ff-4e01-bf08-40240e5e811d" />
+
+<img width="967" height="604" alt="image" src="https://github.com/user-attachments/assets/5566d59f-38b3-44ff-8186-adf823236a6c" />
 
 @Schema: Ve a tus clases DTO/Entity y añade descripciones a los atributos (ej. "ID único del usuario", "Correo electrónico en formato válido").
-<img width="944" height="610" alt="image" src="https://github.com/user-attachments/assets/bd4c489e-dc6b-4c18-9e7a-5acecd8bf8de" />
-<img width="963" height="602" alt="image" src="https://github.com/user-attachments/assets/108a2449-47ff-4e01-bf08-40240e5e811d" />
-<img width="967" height="604" alt="image" src="https://github.com/user-attachments/assets/5566d59f-38b3-44ff-8186-adf823236a6c" />
+<img width="756" height="501" alt="Captura de pantalla 2026-05-15 180330" src="https://github.com/user-attachments/assets/cf3e4d16-ac1e-4914-b516-b994e2d4d0b1" />
+<img width="546" height="342" alt="image" src="https://github.com/user-attachments/assets/5ab028c3-5ab3-42ba-af47-1f696f918c94" />
+<img width="596" height="553" alt="image" src="https://github.com/user-attachments/assets/aef75175-0066-46f3-9771-7f487dcd38a1" />
+<img width="884" height="601" alt="image" src="https://github.com/user-attachments/assets/300dec3c-f418-45ef-af7b-6a55292465c3" />
+<img width="597" height="157" alt="image" src="https://github.com/user-attachments/assets/a918a813-f472-45a7-96e7-306d82fbcd17" />
+
 
 
 
